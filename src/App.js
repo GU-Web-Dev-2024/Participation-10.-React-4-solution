@@ -34,6 +34,9 @@ function App() {
           Decrement
         </button>
 
+        {/* Additional task 1 */}
+        <button onClick={() => setCount(0)} style={{ marginLeft: '10px' }}>Reset</button>
+
         {/* Added button to update new header text on click */}
         <button
           onClick={updateMessage}
