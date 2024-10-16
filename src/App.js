@@ -3,10 +3,18 @@ import './App.css';
 
 function App() {
 
+  //array to randomly choose a message from
+  const messages = [
+    "Hello",
+    "Hiya",
+    "Hey",
+    "BOO",
+    "👻"
+  ];
+
   //declare a state variable "count" with an initial value of 0
   const [count, setCount] = useState(0);
-
-  let message = "Hello from App.js!";
+  const [message, updateHello] = useState("Yo");
 
   return (
     <>
@@ -26,15 +34,28 @@ function App() {
           Decrement
         </button>
 
+        {/* Added button to update new header text on click */}
+        <button
+          onClick={updateMessage}
+        >
+          Update Message
+        </button>
+
       </div>
 
       <div>
         <h1 id="hello-header" style={{ textAlign: "center" }}>
-          {message}
+          {message}, from App.js!
         </h1>
       </div>
     </>
   );
+
+  //callback for updateHello hook
+  function updateMessage() {
+    updateHello(messages[Math.floor(Math.random() * messages.length)]);
+  }
+
 }
 
 export default App;
