@@ -17,6 +17,7 @@ function App() {
   const [message, updateHello] = useState("Yo");
 
   return (
+    // <></> surrounding multiple elements as we can only return one JSX element.    
     <>
       <div style={{ textAlign: "center", padding: "50px" }}>
         <h1>
