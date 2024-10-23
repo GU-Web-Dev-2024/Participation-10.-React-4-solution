@@ -1,0 +1,74 @@
+/* Basic styling for the game */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Grid layout for the game holes */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    /* 3 columns of 150px each */
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Styling for each hole */
+.hole {
+    width: 150px;
+    height: 150px;
+    background-color: lightgray;
+    border: 2px solid #333;
+    position: relative;
+    /* Allows positioning of the mole within the hole */
+}
+
+/* Styling for the mole */
+.mole {
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    border-radius: 50%;
+    /* Makes the mole circular */
+    position: absolute;
+    top: 25px;
+    /* Centers the mole vertically within the hole */
+    left: 25px;
+    /* Centers the mole horizontally within the hole */
+    display: none;
+    /* Mole is hidden by default */
+    /* Additional styling to add image as mole */
+    /* background-image: url("./images/mole.png"); */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Hover effect for the mole */
+.mole:hover {
+    cursor: pointer;
+    /* Changes cursor to pointer on hover */
+    border: 5px solid yellow;
+    /* Highlights the mole when hovered */
+}
+
+/* Styling for the start button */
+#startButton {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Styling for the score display */
+#scoreBoard {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Styling for the timer display */
+#timer {
+    font-size: 24px;
+    margin-top: 20px;
+    color: red;
+}

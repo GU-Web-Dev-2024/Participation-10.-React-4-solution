@@ -6,6 +6,9 @@
 // This enables the Mole component to access and update the state defined in App.js.
 // For more information, see: https://react.dev/learn/sharing-state-between-components
 
+import "./css/mole.css";
+
+
 function Mole(props) {
     // The Mole component receives props, which include "moleMode" and "updateMoleMode" from the parent (App.js).
     // These props are used to control whether the app is in Mole Mode and to switch between Mole Mode and Counter Mode.
@@ -20,6 +23,37 @@ function Mole(props) {
                         Mole Mode!
                     </h1>
                 </div>
+                <div>
+                    <h1>Whack-a-Mole Game</h1>
+                    {/* <!-- Display for the score --> */}
+                    <div id="scoreBoard">Score: 0</div>
+                    {/* <!-- Display for the timer --> */}
+                    <div id="timer">Time Left: 0s</div>
+                    {/* <!-- Button to start the game --> */}
+                    <button id="startButton">Start Game</button>
+                    {/* <!-- Game grid containing holes and moles --> */}
+                    <div class="grid">
+                        <div class="hole" id="hole1">
+                            <div class="mole"></div>
+                        </div>
+                        <div class="hole" id="hole2">
+                            <div class="mole"></div>
+                        </div>
+                        <div class="hole" id="hole3">
+                            <div class="mole"></div>
+                        </div>
+                        <div class="hole" id="hole4">
+                            <div class="mole"></div>
+                        </div>
+                        <div class="hole" id="hole5">
+                            <div class="mole"></div>
+                        </div>
+                        <div class="hole" id="hole6">
+                            <div class="mole"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div>
                     {/* Display the current mode (either Mole Mode or Counter App Mode) */}
                     <span>
