@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import './App.css';
+import Mole from './Mole';
 
 function App() {
+
+  //mole mode code!
+  // Declare a state variable "moleMode" initialized to false.
+  // "moleMode" will track whether the app is in "Mole Mode" or "Counter Mode".
+  // The "updateMoleMode" function is used to toggle between modes.
+  // We're going to use this to decide to render the "Mole" mode code.
+  const [moleMode, updateMoleMode] = useState(false);
 
   // An array of messages that will be randomly chosen and displayed when a button is clicked.
   const messages = [
@@ -20,58 +28,84 @@ function App() {
   // "message" holds the current displayed message, and "updateHello" will be used to update it.
   const [message, updateHello] = useState("Yo");
 
-  // Return the JSX that defines the structure of the component.
-  return (
-    // The <></> fragment allows us to return multiple sibling elements since React components
-    // must return only one parent element. Fragments don’t add extra nodes to the DOM.
-    <>
-      <div style={{ textAlign: "center", padding: "50px" }}>
-        {/* Display the current value of the counter (count) */}
-        <h1>
-          Counter: {count}
-        </h1>
+  // Return the JSX that defines the structure of the component.  
+  // Conditional rendering based on the value of "moleMode".
+  // If moleMode is false, the Counter app is shown. If moleMode is true, the Mole component is shown instead.
+  if (!moleMode) {
+    return (
+      // The <></> fragment allows us to return multiple sibling elements since React components
+      // must return only one parent element. Fragments don’t add extra nodes to the DOM.
+      <>
+        <div style={{ textAlign: "center", padding: "50px" }}>
+          {/* Display the current value of the counter (count) */}
+          <h1>
+            Counter: {count}
+          </h1>
 
-        {/* Button to increment the count. When clicked, setCount is called with the current count + 1 */}
-        <button
-          onClick={() => setCount(count + 1)}
-        >
-          Increment
-        </button>
+          {/* Button to increment the count. When clicked, setCount is called with the current count + 1 */}
+          <button
+            onClick={() => setCount(count + 1)}
+          >
+            Increment
+          </button>
 
-        {/* Button to decrement the count. When clicked, setCount is called with the current count - 1 */}
-        <button
-          onClick={() => setCount(count - 1)}
-        >
-          Decrement
-        </button>
+          {/* Button to decrement the count. When clicked, setCount is called with the current count - 1 */}
+          <button
+            onClick={() => setCount(count - 1)}
+          >
+            Decrement
+          </button>
 
-        {/* Reset button to set the count back to 0 */}
-        <button
-          onClick={() => setCount(0)}
-          style={{ marginLeft: '10px' }}
-        >
-          Reset
-        </button>
+          {/* Reset button to set the count back to 0 */}
+          <button
+            onClick={() => setCount(0)}
+            style={{ marginLeft: '10px' }}
+          >
+            Reset
+          </button>
 
-        {/* Button to update the message displayed below.
-            When clicked, the updateMessage function is called to choose a random message */}
-        <button
-          onClick={updateMessage}
-        >
-          Update Message
-        </button>
+          {/* Button to update the message displayed below.
+              When clicked, the updateMessage function is called to choose a random message */}
+          <button
+            onClick={updateMessage}
+          >
+            Update Message
+          </button>
 
-      </div>
+        </div>
 
-      {/* Second section displaying the current "message" */}
-      <div>
-        <h1 id="hello-header" style={{ textAlign: "center" }}>
-          {/* Dynamically render the "message" state value followed by "from App.js!" */}
-          {message}, from App.js!
-        </h1>
-      </div>
-    </>
-  );
+        {/* Second section displaying the current "message" */}
+        <div>
+          <h1 id="hello-header" style={{ textAlign: "center" }}>
+            {/* Dynamically render the "message" state value followed by "from App.js!" */}
+            {message}, from App.js!
+          </h1>
+        </div>
+
+        {/* Section to toggle between modes */}
+        <div>
+          {/* Display the current mode (either Counter Mode or Mole Mode) */}
+          <span>
+            Current Mode: {moleMode ? "Mole Mode" : "Counter App"}
+          </span>
+          {/* Button to toggle Mole Mode on and off. When clicked, it 
+              updates the moleMode state to the opposite of its current 
+              value. */}
+          <button
+            onClick={() => updateMoleMode(!moleMode)}
+          >
+            Enable Mole Mode
+          </button>
+        </div >
+      </>
+    );
+  } else {
+    return (
+      // Conditional rendering
+      // Render component "Mole", pass state "updateMoleMode" as a prop to the new child component
+      <Mole moleMode={moleMode} updateMoleMode={updateMoleMode} />
+    );
+  }
 
   // Function to update the "message" state.
   // This function picks a random message from the "messages" array.
