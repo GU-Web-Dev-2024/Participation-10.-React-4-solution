@@ -7,17 +7,23 @@
 // For more information, see: https://react.dev/learn/sharing-state-between-components
 
 import "./css/mole.css";
-
+import MoleGame from "./MoleGame";
+//import React, { useEffect } from "react";
 
 function Mole(props) {
     // The Mole component receives props, which include "moleMode" and "updateMoleMode" from the parent (App.js).
     // These props are used to control whether the app is in Mole Mode and to switch between Mole Mode and Counter Mode.
+
+    //one option to run mole game script
+    //MoleGame();
 
     // Check if moleMode is true
     if (props.moleMode) {
         // If moleMode is true, render the Mole Mode UI
         return (
             <>
+                {/* another option to run mole game script */}
+                <MoleGame />
                 <div>
                     <h1>
                         Mole Mode!
