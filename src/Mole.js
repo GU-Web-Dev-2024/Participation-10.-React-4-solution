@@ -32,24 +32,24 @@ function Mole(props) {
                     {/* <!-- Button to start the game --> */}
                     <button id="startButton">Start Game</button>
                     {/* <!-- Game grid containing holes and moles --> */}
-                    <div class="grid">
-                        <div class="hole" id="hole1">
-                            <div class="mole"></div>
+                    <div className="grid">
+                        <div className="hole" id="hole1">
+                            <div className="mole"></div>
                         </div>
-                        <div class="hole" id="hole2">
-                            <div class="mole"></div>
+                        <div className="hole" id="hole2">
+                            <div className="mole"></div>
                         </div>
-                        <div class="hole" id="hole3">
-                            <div class="mole"></div>
+                        <div className="hole" id="hole3">
+                            <div className="mole"></div>
                         </div>
-                        <div class="hole" id="hole4">
-                            <div class="mole"></div>
+                        <div className="hole" id="hole4">
+                            <div className="mole"></div>
                         </div>
-                        <div class="hole" id="hole5">
-                            <div class="mole"></div>
+                        <div className="hole" id="hole5">
+                            <div className="mole"></div>
                         </div>
-                        <div class="hole" id="hole6">
-                            <div class="mole"></div>
+                        <div className="hole" id="hole6">
+                            <div className="mole"></div>
                         </div>
                     </div>
                 </div>
